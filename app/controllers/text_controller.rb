@@ -18,4 +18,8 @@ class TextController < ApplicationController
   def show
     @blog = Text.find(params[:id])
   end
+  
+  def edit
+    @blog = Text.find(params[:id])
+  end
 end
