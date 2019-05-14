@@ -23,6 +23,12 @@ class TextController < ApplicationController
     @blog.update(text_params)
   end
   
+  def destroy
+    blog = Text.find(params[:id])
+    blog.destroy if current_user_id == text.user_id
+       #ログインしているユーザーとtextのゆーさ―idが一致するときのみ削除できるようにしよう
+  end
+  
   private
   def text_params
     params.permit(:text)

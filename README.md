@@ -1,24 +1,14 @@
-# README
+事前準備、textコントローラーのルーティング、textコントローラー
+のアクションの定義は終了
+----------------------------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+usersモデルを作成してdeviceでのログイン設定
 
-Things you may want to cover:
+textモデルとusersモデルもアソシエーションを定義して、
+textモデルのカラムにuser_idを追加しよう。
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+あとは、html,cssを書きまくる！
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+デバックしてend
