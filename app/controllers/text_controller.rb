@@ -14,4 +14,8 @@ class TextController < ApplicationController
   def text_params
     params.permit(:text)
   end
+  
+  def show
+    @blog = Text.find(params[:id])
+  end
 end
