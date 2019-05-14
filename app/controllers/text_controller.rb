@@ -10,16 +10,21 @@ class TextController < ApplicationController
     Text.create(text_params)
   end
   
-  private
-  def text_params
-    params.permit(:text)
-  end
-  
   def show
     @blog = Text.find(params[:id])
   end
   
   def edit
     @blog = Text.find(params[:id])
+  end
+  
+  def update
+    @blog = Text.find(params[:id])
+    @blog.update(text_params)
+  end
+  
+  private
+  def text_params
+    params.permit(:text)
   end
 end
