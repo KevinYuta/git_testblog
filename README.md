@@ -7,8 +7,6 @@ usersモデルを作成してdeviceでのログイン設定
 textモデルとusersモデルもアソシエーションを定義して、
 textモデルのカラムにuser_idを追加しよう。
 
-
-
 あとは、html,cssを書きまくる！
 
 デバックしてend
