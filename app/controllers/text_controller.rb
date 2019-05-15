@@ -1,6 +1,7 @@
 class TextController < ApplicationController
     
   before_action :move_to_index, exceot: [:index, :show]
+  after_action :move_to_index, only: [:create, :update, :destroy]
   
   def index
       @blog = Text.all
