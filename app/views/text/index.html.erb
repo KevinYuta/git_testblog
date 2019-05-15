@@ -3,5 +3,13 @@
       <li>
          <h2><%= blog.text%></h2>
       </li>
+      <li>
+        <%= link_to "詳細", text_path(text.id), method: :get %>
+      </li>
+       <li>
+          <%= link_to '編集', edit_text_path(text.id), method: :get %>
+      </li>
+       <li>
+          <%= link_to '削除', text_path(text.id), method: :delete %>
     <% end %>
 </div>
