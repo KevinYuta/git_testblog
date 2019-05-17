@@ -13,3 +13,13 @@ textモデルとusersモデルもアソシエーションを定義して、
 あとは、html,cssを書きまくる！
 
 デバックしてend
+
+ <li>
+        <%= link_to "詳細", "/text/#{text.id}", method: :get %>
+      </li>
+      <li>
+          <%= link_to '編集', "/text/#{text.id}/edit ", method: :get %>
+      </li>
+      <li>
+          <%= link_to '削除', "/text/#{text.id}", method: :delete %>
+      </li>
