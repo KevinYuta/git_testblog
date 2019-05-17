@@ -1,7 +1,7 @@
 class TextController < ApplicationController
     
-  before_action :move_to_index, exceot: [:index, :show]
-  after_action :move_to_index, only: [:create, :update, :destroy]
+  # before_action :move_to_index, exceot: [:index, :show]
+  # after_action :move_to_index, only: [:create, :update, :destroy]
   
   def index
       @blog = Text.all
@@ -38,7 +38,7 @@ class TextController < ApplicationController
     params.permit(:text)
   end
   
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
-  end
+  # def move_to_index
+  #   redirect_to action: :index unless user_signed_in?
+  # end
 end
