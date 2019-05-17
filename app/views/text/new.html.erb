@@ -1,9 +1,10 @@
 <div>
     <a herf="/">一覧に戻る</a>
-    <%= form_tag('/text', method: :post) %>
+    <%= form_tag('/text', method: :post) do %>
       <h3>
           投稿する
       </h3>
       <textarea name="text" placeholder="text" rows="10" cols="30"></textarea>           
       <input type="submit" value="SENT">
+    <% end %>
 </div>

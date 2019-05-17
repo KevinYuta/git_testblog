@@ -4,7 +4,7 @@ class TextController < ApplicationController
   # after_action :move_to_index, only: [:create, :update, :destroy]
   
   def index
-      @blog = Text.all
+      @text = Text.all
   end
   
   def new
@@ -15,21 +15,21 @@ class TextController < ApplicationController
   end
   
   def show
-    @blog = Text.find(params[:id])
+    @text = Text.find(params[:id])
   end
   
   def edit
-    @blog = Text.find(params[:id])
+    @text = Text.find(params[:id])
   end
   
   def update
-    @blog = Text.find(params[:id])
-    @blog.update(text_params)
+    @text = Text.find(params[:id])
+    @text.update(text_params)
   end
   
   def destroy
-    blog = Text.find(params[:id])
-    blog.destroy if current_user_id == text.user_id
+    text = Text.find(params[:id])
+    text.destroy if current_user_id == text.user_id
        #ログインしているユーザーとtextのゆーさ―idが一致するときのみ削除できるようにしよう
   end
   
