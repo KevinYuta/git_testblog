@@ -14,7 +14,6 @@ class TextController < ApplicationController
     Text.create(text: text_params[:text], user_id: current_user.id)
   end
   
-  
   def edit
     @texts = Text.find(params[:id])
   end
@@ -26,7 +25,7 @@ class TextController < ApplicationController
   
   def destroy
     text = Text.find(params[:id])
-    text.destroy if current_user_id == text.user_id
+    text.destroy
        #ログインしているユーザーとtextのゆーさ―idが一致するときのみ削除できるようにしよう
   end
   
