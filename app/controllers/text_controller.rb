@@ -4,7 +4,7 @@ class TextController < ApplicationController
   # after_action :move_to_index, only: [:create, :update, :destroy]
   
   def index
-      @text = Text.all
+      @texts = Text.all
   end
   
   def new
@@ -14,17 +14,14 @@ class TextController < ApplicationController
     Text.create(text: text_params[:text], user_id: current_user.id)
   end
   
-  def show
-    @text = Text.find(params[:id])
-  end
   
   def edit
-    @text = Text.find(params[:id])
+    @texts = Text.find(params[:id])
   end
   
   def update
-    @text = Text.find(params[:id])
-    @text.update(text_params)
+    @texts = Text.find(params[:id])
+    @texts.update(text_params)
   end
   
   def destroy
