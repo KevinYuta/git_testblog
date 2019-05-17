@@ -11,7 +11,7 @@ class TextController < ApplicationController
   end
   
   def create
-    Text.create(text_params)
+    Text.create(text: text_params[:text], user_id: current_user.id)
   end
   
   def show
