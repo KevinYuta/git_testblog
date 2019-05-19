@@ -27,7 +27,7 @@
       <a href="/" class="brand-logo">Testblog</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if user_signed_in? %>
-        <li><a href="/users/sign_out">ログアウト</a></li>
+        <li><%= link_to 'ログアウト',  destroy_user_session_path, method: :delete %></li>
         <li><a href="/text/new">投稿</a></li>
         <% else %>
         <li><a href="/users/sign_up">新規登録</a></li>
