@@ -5,22 +5,38 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <!--これを消してしまうと、httpリクエストがgetになってしまう-->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
   </head>
 
   <body>
     <header>
+      <nav class="teal lighten-1">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Testblog</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><a href="/users/sign_out">ログアウト</a></li>
+        <li><a href="/text/new">投稿</a></li>
+        <% else %>
+        <li><a href="/users/sign_up">新規登録</a></li>
+        <li><a href="/users/sign_in">ログイン</a></li>
+      <% end %>
+      </ul>
+    </div>
+  </nav>
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">Testblog</a></h1>
         <div class="grid-6">
-          <% if user_signed_in? %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <%= link_to "投稿", new_text_path, method: :get %>
-          <% else %>
-          <%= link_to "ログイン", new_user_session_path, method: :get %>
-          <%= link_to "新規登録", new_user_registration_path, method: :get %>
-          <% end %>
+          
         </div>
       </div>
     </header>
