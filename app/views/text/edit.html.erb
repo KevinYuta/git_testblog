@@ -1,11 +1,16 @@
-<div>
-    <a herf="/">一覧に戻る</a>
-    <%= form_tag("/text/#{@text.id}", method: :patch) do %>
+<div class="row">
+    <%= form_tag(text_path, method: :patch) do %>
       <h3>
           編集する
       </h3>
-      
-      <textarea name="text" placeholder="text" rows="10" cols="30"></textarea>
-      <input type="submit" value="SENT">
-    <% end %>
+    <div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="autocomplete-input" name="text">
+          <label for="autocomplete-input">文字を入力してください</label>
+        </div>
+        <input class="btn"type="submit" value="SENT">
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -4,7 +4,7 @@ class TextController < ApplicationController
   # after_action :move_to_index, only: [:create, :update, :destroy]
   
   def index
-      @texts = Text.all
+      @texts = Text.all.order(updated_at: :desc)
   end
   
   def new
